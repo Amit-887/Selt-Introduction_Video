@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amit Kumar – Self Introduction</title>
+  <meta name="description" content="Self introduction video by Amit Kumar – Training DSA portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a12;
+      --surface: #12121f;
+      --card: #1a1a2e;
+      --accent: #7c3aed;
+      --accent2: #a855f7;
+      --glow: #7c3aed55;
+      --text: #f0f0ff;
+      --muted: #8888aa;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+    }
+
+    /* Animated background blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    body::before {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #7c3aed44, transparent 70%);
+      top: -100px; left: -100px;
+      animation: floatA 10s ease-in-out infinite alternate;
+    }
+    body::after {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #a855f733, transparent 70%);
+      bottom: -100px; right: -100px;
+      animation: floatB 12s ease-in-out infinite alternate;
+    }
+    @keyframes floatA { to { transform: translate(60px, 80px); } }
+    @keyframes floatB { to { transform: translate(-60px, -60px); } }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      animation: fadeDown 0.8s ease both;
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #7c3aed22, #a855f722);
+      border: 1px solid #7c3aed55;
+      color: var(--accent2);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #f0f0ff 30%, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    /* Video Card */
+    .video-card {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid #ffffff10;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 60px var(--glow), 0 20px 60px #00000066;
+      animation: fadeUp 0.9s ease 0.2s both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 80px var(--glow), 0 30px 80px #00000088;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      background: #000;
+      border-radius: 20px 20px 0 0;
+      max-height: 500px;
+      outline: none;
+    }
+
+    .video-footer {
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #ffffff08;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .video-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      display: inline-block;
+      animation: pulse 1.5s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+    .file-info {
+      font-size: 0.78rem;
+      color: #555577;
+    }
+
+    /* Info chips */
+    .chips {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 1s ease 0.4s both;
+    }
+    .chip {
+      background: #1a1a2e;
+      border: 1px solid #ffffff10;
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .chip span { color: var(--text); font-weight: 600; }
+
+    /* Footer */
+    .footer {
+      font-size: 0.75rem;
+      color: #44445a;
+      text-align: center;
+      animation: fadeUp 1s ease 0.6s both;
+    }
+    .footer a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+    .footer a:hover { text-decoration: underline; }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="badge">🎓 Training DSA · 2026</div>
+      <h1>Self Introduction</h1>
+      <p class="subtitle">Watch directly — no download required</p>
+    </div>
+
+    <div class="video-card">
+      <video
+        id="intro-video"
+        controls
+        preload="metadata"
+        poster=""
+      >
+        <source src="Selt_Introduction.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-footer">
+        <div class="video-label">
+          <span class="dot"></span>
+          Ready to play
+        </div>
+        <div class="file-info">Selt_Introduction.mp4 · 98 MB</div>
+      </div>
+    </div>
+
+    <div class="chips">
+      <div class="chip">🎥 <span>MP4</span> Format</div>
+      <div class="chip">☁️ Hosted on <span>GitHub Pages</span></div>
+      <div class="chip">📁 <span>98 MB</span> Video</div>
+    </div>
+
+    <p class="footer">
+      Hosted via <a href="https://github.com/Amit-887/Selt-Introduction_Video" target="_blank">GitHub Pages</a> · Amit Kumar &copy; 2026
+    </p>
+
+  </div>
+</body>
+</html>
